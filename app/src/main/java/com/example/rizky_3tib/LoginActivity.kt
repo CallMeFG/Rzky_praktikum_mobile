@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -30,16 +31,45 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        /*
 //        val tombolLogin : Button = findViewById(R.id.btn_login)
 //        val username : EditText = findViewById(R.id.ett_username)
 //        val password : EditText = findViewById(R.id.ett_password)
 //        val lupaPassword : TextView = findViewById(R.id.forget_password)
+
+         */
+
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        // Kondisi jika isLogin bernilai true
+//        val isLogin = sharedPref.getBoolean("isLogin", false)
+//        if (isLogin) {
+//            startActivity(Intent(this, MainActivity::class.java))
+//            finish()
+//            return
+//        }
 
 //        tombolLogin.setOnClickListener{
         binding.btnLogin.setOnClickListener{
             val user = binding.ettUsername.text.toString()
             val pw = binding.ettPassword.text.toString()
 
+            if (user.isNotEmpty() && user == pw) {
+
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLogin", true)
+                editor.putString("username", user)
+                editor.apply()
+
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }else{
+                AlertDialog.Builder(this)
+                    .setTitle("Login Gagal")
+                    .setMessage("Silahkan coba lagi")
+                    .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                    .show()
+            }
+            /*
             Log.e("hasil","Username $user Password $pw")
             Toast.makeText(this, "Username $user Password $pw", Toast.LENGTH_SHORT).show()
 
@@ -49,7 +79,9 @@ class LoginActivity : AppCompatActivity() {
             intent.putExtra("password",pw)
             intent.putExtra("umur",20)
 
-            startActivity(intent)
+           startActivity(intent)
+
+             */
         }
     }
 }
