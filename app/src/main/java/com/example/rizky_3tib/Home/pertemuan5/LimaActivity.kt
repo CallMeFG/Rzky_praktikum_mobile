@@ -1,7 +1,6 @@
-package com.example.rizky_3tib.pertemuan5
+package com.example.rizky_3tib.Home.pertemuan5
 
 import android.content.Intent
-import android.os.Binder
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem

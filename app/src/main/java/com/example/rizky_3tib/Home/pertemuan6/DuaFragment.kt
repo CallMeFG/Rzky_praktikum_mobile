@@ -1,4 +1,4 @@
-package com.example.rizky_3tib.pertemuan6
+package com.example.rizky_3tib.Home.pertemuan6
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,11 +14,11 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
  * A simple [Fragment] subclass.
- * Use the [TigaFragment.newInstance] factory method to
+ * Use the [DuaFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 
-class TigaFragment : Fragment() {
+class DuaFragment : Fragment() {
 
     /*
     // TODO: Rename and change types of parameters
@@ -40,9 +40,8 @@ class TigaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tiga, container, false)
+        return inflater.inflate(R.layout.fragment_dua, container, false)
     }
-
     /*
     companion object {
         /**
@@ -51,12 +50,12 @@ class TigaFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment TigaFragment.
+         * @return A new instance of fragment DuaFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            TigaFragment().apply {
+            DuaFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

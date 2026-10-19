@@ -1,4 +1,4 @@
-package com.example.rizky_3tib.pertemuan5
+package com.example.rizky_3tib.Home.pertemuan5
 
 import android.annotation.SuppressLint
 import android.os.Bundle
